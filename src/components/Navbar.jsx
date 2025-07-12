@@ -34,13 +34,13 @@ const Navbar = () => {
             <img className="w-8 rounded-full" src={assets.profile_pic} alt="" />
             <img className="w-2.5" src={assets.dropdown_icon} alt="" />
           </div>
-          {isMenuOpen &&             <div className="absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20">
+          {isMenuOpen && <div className="absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20">
               <div className="min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4">
-                <p onClick={() => navigate("/my-profile")} className="hover:text-black cursor-pointer">My Profile</p>
-                <p onClick={() => navigate("/my-appointmemnts")} className="hover:text-black cursor-pointer">
+                <p onClick={() => {navigate("/my-profile"); setIsMenuOpen(false)}} className="hover:text-black cursor-pointer">My Profile</p>
+                <p onClick={() => {navigate("/my-appointmemnts"); setIsMenuOpen(false)}} className="hover:text-black cursor-pointer">
                   My Appointmets
                 </p>
-                <p onClick={() => {setToken(false); navigate("/login")}} className="hover:text-black cursor-pointer">Logout</p>
+                <p onClick={() => {setToken(false); navigate("/login"); setIsMenuOpen(false)}} className="hover:text-black cursor-pointer">Logout</p>
               </div>
             </div>}
             </>
